@@ -7,11 +7,24 @@ function App() {
   //values not updated so we have to use useState hook for ui update
   let [val,setVal] = useState(0);
   const inc = () => {
-     setVal(val+1);
+     val += 1;
+     if(val <= 20){
+      setVal(val);
+     }
+     else{
+      val = 20;
+     }
   }
   const dec = () => {
-     setVal(val-1);
+    val -= 1;
+    if(val >= 0){
+      setVal(val);
     }
+    else{
+      val = 0;
+    }
+
+  }
     return (
       <>
      <h1>react and vite</h1>
